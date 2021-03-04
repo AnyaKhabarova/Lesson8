@@ -61,7 +61,8 @@ namespace Classes_Directories_8._2
                     if (!NewDir.Exists)
                         NewDir.Create();
 
-                    Console.WriteLine(files.Length + folders.Length);
+                    NewDir.Delete(true);
+                    Console.WriteLine("Directory is deleted");
                     
                 }
 
