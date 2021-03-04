@@ -7,7 +7,8 @@ namespace Classes_Directories_8._2
     {
         static void Main(string[] args)
         {
-            DriveInfo[] drives = DriveInfo.GetDrives();
+            
+/*            DriveInfo[] drives = DriveInfo.GetDrives();
 
             foreach (DriveInfo drive in drives)
             {
@@ -18,6 +19,28 @@ namespace Classes_Directories_8._2
                     Console.WriteLine($"Size: {drive.TotalSize}");
                     Console.WriteLine($"Space: {drive.TotalFreeSpace}");
                     Console.WriteLine($"Tag: {drive.VolumeLabel}");
+                }
+            }*/
+
+            GetCatalogs();
+
+            static void GetCatalogs()
+            {
+                string dirName = @"E:\\";
+                if (Directory.Exists(dirName))
+                {
+                    Console.WriteLine("Folders:");
+                    string[] dirs = Directory.GetDirectories(dirName);
+
+                    foreach (string d in dirs)                    
+                        Console.WriteLine(d);
+
+                    Console.WriteLine();
+                    Console.WriteLine("Files:");
+                    string[] files = Directory.GetFiles(dirName);
+
+                    foreach (string f in files)
+                        Console.WriteLine(f);
                 }
             }
         }
