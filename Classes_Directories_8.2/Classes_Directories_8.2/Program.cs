@@ -7,6 +7,17 @@ namespace Classes_Directories_8._2
     {
         static void Main(string[] args)
         {
+            DirectoryInfo dirName = new DirectoryInfo(@"C:\Users\King Arthur\Desktop\");
+            if (dirName.Exists)
+            {
+                DirectoryInfo testFolder = new DirectoryInfo(@"C:\Users\King Arthur\Desktop\testFolder");
+                if (!testFolder.Exists)
+                    testFolder.Create();
+            }
+
+            
+
+
 
             /*            DriveInfo[] drives = DriveInfo.GetDrives();
 
@@ -44,30 +55,31 @@ namespace Classes_Directories_8._2
                  }
              }*/
 
-            FilesCounter();
+            /*            FilesCounter();
 
-            static void FilesCounter()
-            {
-                string dirName = @"C:\\";                
-                if (Directory.Exists(dirName))
-                {
-                    string[] files = Directory.GetFiles(dirName);
-                    Console.WriteLine(files.Length);
+                        static void FilesCounter()
+                        {
+                            string dirName = @"C:\\";                
+                            if (Directory.Exists(dirName))
+                            {
+                                string[] files = Directory.GetFiles(dirName);
+                                Console.WriteLine(files.Length);
 
-                    string[] folders = Directory.GetDirectories(dirName);
-                    Console.WriteLine(folders.Length);
+                                string[] folders = Directory.GetDirectories(dirName);
+                                Console.WriteLine(folders.Length);
 
-                    DirectoryInfo NewDir = new DirectoryInfo(@"/NewDir");
-                    if (!NewDir.Exists)
-                        NewDir.Create();
+                                DirectoryInfo NewDir = new DirectoryInfo(@"/NewDir");
+                                if (!NewDir.Exists)
+                                    NewDir.Create();
 
-                    NewDir.Delete(true);
-                    Console.WriteLine("Directory is deleted");
-                    
-                }
+                                NewDir.Delete(true);
+                                Console.WriteLine("Directory is deleted");
 
-                
-            }
+                            }*/
+
+
+
         }
+
     }
 }
