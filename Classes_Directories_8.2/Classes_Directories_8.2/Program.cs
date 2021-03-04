@@ -48,15 +48,24 @@ namespace Classes_Directories_8._2
 
             static void FilesCounter()
             {
-                string dirName = @"C:\\";
+                string dirName = @"C:\\";                
                 if (Directory.Exists(dirName))
                 {
                     string[] files = Directory.GetFiles(dirName);
-                    Console.WriteLine(files.Length+1);
+                    Console.WriteLine(files.Length);
 
                     string[] folders = Directory.GetDirectories(dirName);
-                    Console.WriteLine(folders.Length+1);
+                    Console.WriteLine(folders.Length);
+
+                    DirectoryInfo NewDir = new DirectoryInfo(@"/NewDir");
+                    if (!NewDir.Exists)
+                        NewDir.Create();
+
+                    Console.WriteLine(files.Length + folders.Length);
+                    
                 }
+
+                
             }
         }
     }
